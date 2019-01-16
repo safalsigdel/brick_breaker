@@ -65,7 +65,7 @@ var canvas = document.getElementById("myCanvas");
                             ctx.clearRect(0,0,canvas.width,canvas.height);
                             drawScore('#ffff');
                             setupRestart();
-                            window.cancelAnimationFrame();                            
+                            window.cancelAnimationFrame(request);                            
                         }
                     }
                 }
@@ -140,7 +140,7 @@ var canvas = document.getElementById("myCanvas");
                     ctx.clearRect(0,0,canvas.width,canvas.height);
                     drawScore('#ffff');
                     setupRestart();
-                    window.cancelAnimationFrame();
+                    window.cancelAnimationFrame(request);
 
                 }
                 else {
