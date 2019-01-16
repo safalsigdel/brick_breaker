@@ -65,7 +65,13 @@ var canvas = document.getElementById("myCanvas");
                             ctx.clearRect(0,0,canvas.width,canvas.height);
                             drawScore('#ffff');
                             setupRestart();
-                            window.cancelAnimationFrame();
+                            try {
+                            	window.cancelAnimationFrame();
+                            } catch(e) {
+                            	
+                            	console.log('game over');
+                            }
+                            
                         }
                     }
                 }
