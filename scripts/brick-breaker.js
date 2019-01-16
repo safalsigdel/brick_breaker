@@ -65,8 +65,10 @@ var canvas = document.getElementById("myCanvas");
                             ctx.clearRect(0,0,canvas.width,canvas.height);
                             drawScore('#ffff');
                             setupRestart();
-                            window.cancelAnimationFrame(request);                            
+                            window.cancelAnimationFrame();
+                                       
                         }
+
                     }
                 }
             }
@@ -140,7 +142,15 @@ var canvas = document.getElementById("myCanvas");
                     ctx.clearRect(0,0,canvas.width,canvas.height);
                     drawScore('#ffff');
                     setupRestart();
-                    window.cancelAnimationFrame(request);
+                    try {
+                    	window.cancelAnimationFrame();
+                    } catch(e) {
+                    	
+                    	console.log('game over');
+                    	return false;
+                    }
+                    
+
 
                 }
                 else {
@@ -160,7 +170,7 @@ var canvas = document.getElementById("myCanvas");
         }
         x += dx;
         y += dy;
-        request = requestAnimationFrame(draw);
+        requestAnimationFrame(draw);
     }
     function setupRestart()
     {
