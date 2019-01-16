@@ -65,13 +65,7 @@ var canvas = document.getElementById("myCanvas");
                             ctx.clearRect(0,0,canvas.width,canvas.height);
                             drawScore('#ffff');
                             setupRestart();
-                            try {
-                            	window.cancelAnimationFrame();
-                            } catch(e) {
-                            	
-                            	console.log('game over');
-                            }
-                            
+                            window.cancelAnimationFrame();                            
                         }
                     }
                 }
@@ -146,12 +140,7 @@ var canvas = document.getElementById("myCanvas");
                     ctx.clearRect(0,0,canvas.width,canvas.height);
                     drawScore('#ffff');
                     setupRestart();
-                    try {
-                    	window.cancelAnimationFrame();
-                    } catch(e) { 	 
-                    	console.log(e);
-                    }
-                   
+                    window.cancelAnimationFrame();
 
                 }
                 else {
